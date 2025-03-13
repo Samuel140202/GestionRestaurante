@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventario - Admin</title>
+    <link rel="stylesheet" href="tablas_admin.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Inventario - Administrador</h1>
+
+        <!-- Botón para abrir el formulario modal -->
+        <button id="openModalButton">Agregar Producto</button>
+
+        <!-- Modal del formulario -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="formTitle">Agregar Producto</h2>
+                <form id="productForm">
+                    <input type="hidden" id="productId" />
+
+                    <label for="productName">Nombre del Producto:</label>
+                    <input type="text" id="productName" required />
+
+                    <label for="productPrice">Precio:</label>
+                    <input type="number" id="productPrice" required />
+
+                    <label for="productCategory">Categoría:</label>
+                    <input type="text" id="productCategory" />
+
+                    <label for="productDescription">Descripción:</label>
+                    <textarea id="productDescription"></textarea>
+
+                    <label for="productQuantity">Cantidad:</label>
+                    <input type="number" id="productQuantity" required />
+
+                    <button type="submit" id="saveProductButton">Guardar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla de inventario -->
+        <table id="inventory-table">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="inventory-body">
+                <!-- Los datos de la tabla se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="inventario_admin_funciones.js"></script>
+</body>
+</html>

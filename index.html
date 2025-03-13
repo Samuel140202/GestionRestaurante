@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio - Roles</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Index._estilos.css"> <!-- Asegúrate de tener un archivo de estilos para esta página -->
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Selecciona tu rol</h1>
+        <div class="button-container">
+            <button id="adminBtn">Administrador</button>
+            <button id="employeeBtn">Empleado</button>
+            <button id="clientBtn">Cliente</button>
+        </div>
+    </div>
+
+    <script>
+        // Redirección a la página de login específica para cada rol
+        document.getElementById('adminBtn').addEventListener('click', function() {
+            window.location.href = 'login_admin.html'; // Página de login del administrador
+        });
+
+        document.getElementById('employeeBtn').addEventListener('click', function() {
+            window.location.href = 'login_employee.html'; // Página de login del empleado
+        });
+
+        document.getElementById('clientBtn').addEventListener('click', function() {
+            window.location.href = 'login_client.html'; // Página de login del cliente
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,79 @@
+/* pedidos_vista.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #eef2f7; /* Fondo más suave y profesional */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Ampliación para pantallas más grandes */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    background-color: white; /* Contraste con el fondo */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+h1 {
+    color: #343a40; /* Tono más oscuro para mejor contraste */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden; /* Para aplicar bordes redondeados a toda la tabla */
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #dee2e6; /* Línea más suave */
+    text-align: left;
+}
+
+th {
+    background-color: #007bff; /* Azul corporativo */
+    color: white;
+    text-transform: uppercase; /* Texto en mayúsculas para los encabezados */
+    font-size: 1rem;
+}
+
+td {
+    background-color: #ffffff;
+    font-size: 0.95rem;
+}
+
+tr:nth-child(even) td {
+    background-color: #f8f9fa; /* Suave alternancia de color */
+}
+
+tr:hover td {
+    background-color: #e9ecef; /* Resaltar filas al pasar el cursor */
+    cursor: pointer;
+}
+
+/* Mejoras adicionales para dispositivos móviles */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+}

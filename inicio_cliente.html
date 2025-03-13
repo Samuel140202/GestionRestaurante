@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quesadillas Martinez</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        /* Estilos CSS */
+        .hero {
+            position: relative;
+            background: url('fondo3.jpg') no-repeat center center/cover;
+            color: rgb(255, 255, 255);
+        }
+
+        /* Capa oscura encima de la imagen */
+        .hero .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad */
+            z-index: 1; /* Asegurarse de que la capa esté encima de la imagen */
+        }
+
+        /* Asegura que el contenido esté por encima de la capa */
+        .hero .container {
+            position: relative;
+            z-index: 2; /* El contenido estará sobre la capa oscura */
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Quesadillas Martinez</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" id="menu-btn" href="#menu">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="btn btn-primary" id="pedido-btn" href="#pedido">Hacer Pedido</a></li>
+                </ul>
+                <!-- Botón Cerrar sesión -->
+                <button id="logout-button" class="btn btn-danger ms-3">Cerrar sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero text-white text-center py-5">
+        <div class="overlay"></div> <!-- Capa oscura transparente -->
+        <div class="container">
+            <h1 class="display-4">¡Bienvenido a Quesadillas Martinez!</h1>
+            <p class="lead">Disfruta de la mejor experiencia gastronómica desde la comodidad de tu hogar.</p>
+            <a href="#menu" class="btn btn-light btn-lg mt-3" id="menu-hero-btn">Ver Menú</a>
+        </div>
+    </header>
+
+    <!-- Sección de Contenido -->
+    <section id="contenido" class="py-5">
+        <div class="container">
+            <iframe id="contenido-frame" src="menu_vista.html" title="Vista de Menú"></iframe>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <footer id="contacto" class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h5>Contáctanos</h5>
+            <p>Email: douglas.mendez1@catolica.edu.sv | Teléfono: +503 75765972</p>
+            <p>Síguenos en nuestras redes sociales:</p>
+            <a href="facebook.com" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+            <a href="Instagram.com" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Referencias a los elementos
+        const menuBtn = document.getElementById('menu-btn');
+        const pedidoBtn = document.getElementById('pedido-btn');
+        const contenidoFrame = document.getElementById('contenido-frame');
+        const menuHeroBtn = document.getElementById('menu-hero-btn');
+
+        // Función para cargar menú y desplazarse
+        const cargarMenu = (e) => {
+            e.preventDefault();
+            contenidoFrame.src = 'menu_vista.html'; // Cargar la página del menú
+            document.getElementById('contenido').scrollIntoView({ behavior: 'smooth' }); // Desplazarse a la sección
+        };
+
+        // Función para cargar pedidos y desplazarse
+        const cargarPedido = (e) => {
+            e.preventDefault();
+            contenidoFrame.src = 'pedidos.html'; // Cargar la página de pedidos
+            document.getElementById('contenido').scrollIntoView({ behavior: 'smooth' }); // Desplazarse a la sección
+        };
+
+        // Asociar eventos a los botones
+        menuBtn.addEventListener('click', cargarMenu);
+        menuHeroBtn.addEventListener('click', cargarMenu);
+        pedidoBtn.addEventListener('click', cargarPedido);
+
+        // Función para cerrar sesión y redirigir al index
+        document.getElementById('logout-button').addEventListener('click', function () {
+            if (confirm('¿Estás seguro de que deseas cerrar sesión?')) {
+                window.location.href = 'index.html';  // Redirigir a la página de inicio
+            }
+        });
+    </script>
+</body>
+
+</html>

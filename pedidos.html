@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu- Pedido</title>
+    <link rel="stylesheet" href="inventario_vista_estilo.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+
+            <style>
+                body {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+                  margin: 0;
+                  background-color: #f0f0f0;
+                }
+            
+                img {
+                    width: 200px; /* Cambia el tamaño según sea necesario */
+                    height: auto; /* Mantiene la proporción de la imagen */
+                }
+              </style>
+            </head>
+            <body>
+              <img src="logo.jpg" alt="Imagen centrada">
+            </body>
+        
+        </div>
+        <table id="inventario-table">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="inventario-body">
+                <!-- Productos cargados dinámicamente -->
+            </tbody>
+        </table>
+
+
+        <div class="cart-container">
+            <h2>Carrito de Compras</h2>
+            <label for="cliente-id">ID del Cliente:</label>
+            <input id="cliente-id" type="number" placeholder="Ingresa el ID del cliente">
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Nombre del Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body">
+                    <!-- Productos añadidos al carrito -->
+                </tbody>
+            </table>
+            <button id="confirm-order">Confirmar Pedido</button>
+        </div>
+    </div>
+
+  
+
+    <script src="pedidos.js"></script>
+</body>
+</html>

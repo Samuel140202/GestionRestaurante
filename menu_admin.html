@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú de Productos - Admin</title>
+    <link rel="stylesheet" href="tablas_admin.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Menú de Productos - Administrador</h1>
+
+        <!-- Botón para abrir el formulario modal -->
+        <button id="openModalButton">Agregar Producto</button>
+
+        <!-- Modal del formulario -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="formTitle">Agregar Producto</h2>
+                <form id="productForm">
+                    <input type="hidden" id="productId" />
+
+                    <label for="productName">Nombre:</label>
+                    <input type="text" id="productName" required />
+
+                    <label for="productPrice">Precio:</label>
+                    <input type="number" id="productPrice" required />
+
+                    <label for="productCategory">Categoría:</label>
+                    <input type="text" id="productCategory" />
+
+                    <label for="productDescription">Descripción:</label>
+                    <textarea id="productDescription"></textarea>
+
+                    <button type="submit" id="saveProductButton">Guardar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla de productos -->
+        <table id="menu-table">
+            <thead>
+                <tr>
+                    
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="menu-body">
+                <!-- Los datos de la tabla se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="menu_admin.js"></script>
+</body>
+</html>

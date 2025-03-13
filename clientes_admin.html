@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Clientes - Admin</title>
+    <link rel="stylesheet" href="clientes_admin.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Clientes - Administrador</h1>
+
+        <!-- Botón para abrir el formulario modal -->
+        <button id="openModalButton">Agregar Cliente</button>
+
+        <!-- Modal del formulario -->
+        <div id="clientModal" class="modal3">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="formTitle">Agregar Cliente</h2>
+                <form id="clientForm">
+                    <input type="hidden" id="clientId" />
+                    <label for="clientName">Nombre:</label>
+                    <input type="text" id="clientName" required />
+
+                    <label for="clientLastName">Apellido:</label>
+                    <input type="text" id="clientLastName" required />
+
+                    <label for="clientEmail">Email:</label>
+                    <input type="email" id="clientEmail" required />
+
+                    <label for="clientUsername">Usuario:</label>
+                    <input type="text" id="clientUsername" required />
+
+                    <label for="clientPassword">Contraseña:</label>
+                    <input type="password" id="clientPassword" required />
+
+                    <button type="submit" id="saveClientButton">Guardar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla de clientes -->
+        <table id="client-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Usuario</th> <!-- Nueva columna -->
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="clients-body">
+                <!-- Los datos de la tabla se insertarán aquí dinámicamente -->
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script src="clientes_admin.js"></script>
+</body>
+</html>
